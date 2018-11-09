@@ -1,14 +1,14 @@
 def new_hash
-
+	{}
 end
 
 def actor
-
+	{name: "Dwayned The Rock Johnson"}
 end
 
 def monopoly
 	monopoly = {}
-
+	monopoly << {railroads: {}}
 end
 
 def monopoly_with_second_tier
@@ -24,4 +24,21 @@ end
 def monopoly_with_fourth_tier
 	#copy and past the monopoly hash you build in the previous method. We're going to add stuff to it here!
 
+end
+
+
+
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
+end
+
+WIN_COMBINATIONS = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
+
+def won?(board)
+    if position_taken?("X", "O") do
+      WIN_COMBINATIONS.each do |win_combination|
+        win_combination.select{|win_index| win_index.all?("X")}
+      end
+    end
+  end
 end
